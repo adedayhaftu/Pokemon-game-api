@@ -597,3 +597,141 @@
       box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
       transform: translateY(-2px);
     }
+#random-pokemon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #FF6B6B, #EE5A52);
+      color: white;
+      font-size: 1.8em;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(238, 90, 82, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    #random-pokemon::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    #random-pokemon:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 15px 35px rgba(238, 90, 82, 0.6);
+    }
+    #random-pokemon:hover::before {
+      left: 100%;
+    }
+    #suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 70px;
+      background: rgba(255, 255, 255, 0.15);
+      -webkit-backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 15px;
+      margin-top: 10px;
+      z-index: 1000;
+      max-height: 300px;
+      overflow-y: auto;
+      transform: translateY(-10px);
+      opacity: 0;
+      animation: slideIn 0.3s ease-out forwards;
+    }
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .suggestion {
+      padding: 15px 20px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: capitalize;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .suggestion:hover {
+      background: rgba(100, 255, 218, 0.2);
+      transform: translateX(5px);
+    }
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .flip-card {
+      height: 500px;
+      perspective: 1000px;
+      position: relative;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+       
+    }
+@keyframes cardEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    @media (max-width: 768px) {
+      .card-list {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 20px;
+      }
+      .container {
+        padding: 20px 15px;
+      }
+      .flip-card {
+        height: 450px;
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #64FFDA, #00BCD4);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #00BCD4, #64FFDA);
+    }
