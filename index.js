@@ -73,7 +73,7 @@ const typeColors = {
               `<span class="type-badge" style="background:${typeColors[type] || '#aaa'}">${type}</span>`
             ).join(' ')}</div>
             <button class="flip-btn">See Details</button>
-            <button class="shiny-btn" title="Toggle shiny appearance">:sparkles:</button>
+            <button class="shiny-btn" title="Toggle shiny appearance">✨</button>
           </div>
           <div class="flip-card-back" id="back-${name}">
             <div style="display: flex; justify-content: center; align-items: center; height: 100%; color: #64FFDA;">
@@ -207,6 +207,5 @@ const typeColors = {
         0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
         50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
         100% { opacity: 0; transform: scale(0.8) rotate(360deg); }
-      }
-    `;
+      }`;
     document.head.appendChild(sparkleStyle);

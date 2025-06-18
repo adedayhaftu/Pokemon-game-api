@@ -7,9 +7,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <audio>
-  <source src="audio/pokeman audio.mp3" type="audio/ogg">
+  <nav class="navbar">
+  <div class="navbar-logo">
+    <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="PokéLab Logo" />
+    <span>PokéLab</span>
+  </div>
+  <ul class="navbar-links">
+    <li><a href="#main-app">Type Checker</a></li>
+    <li><a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a></li>
+    <li><a href="https://github.com/haniazanaw/pokelab" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+</nav>
+  <audio loop id="bg-audio">
+ <source src="audio/pokeman audio.mp3" type="audio/ogg">
 </audio>
+<script>
+  document.addEventListener('click', function playAudioOnce() {
+    document.getElementById('bg-audio').play();
+    document.removeEventListener('click', playAudioOnce);
+  });
+</script>
   <div class="bg-particles"></div>
   <div class="glow-orb"></div>
   <div class="glow-orb"></div>
