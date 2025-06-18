@@ -56,7 +56,7 @@ const typeColors = {
           console.error('Error fetching Pokémon:', error);
         });
     }
-      function renderCard(data) {
+       function renderCard(data) {
       const types = data.types.map(type => type.type.name);
       const img = data.sprites.front_default || '';
       const shinyImg = data.sprites.front_shiny || img;
