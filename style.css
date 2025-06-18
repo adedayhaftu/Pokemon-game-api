@@ -42,7 +42,6 @@
   gap: 1.9em;
   margin-right: 2.5em;
 }
-.navbar-links li {}
 .navbar-links a {
   color: #FFE066;
   text-decoration: none;
@@ -787,3 +786,31 @@
     ::-webkit-scrollbar-thumb:hover {
       background: linear-gradient(135deg, #00BCD4, #64FFDA);
     }
+
+    footer {
+  margin-top: 56px;
+  background: linear-gradient(90deg, #B4397D 60%, #4D77FF 120%);
+  color: #fff;
+  padding: 22px 0 18px 0;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -2px 18px #B4397D22;
+  text-align: center;
+  font-size: 1.12em;
+  position: relative;
+  z-index: 2;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+}
+.footer-links a {
+  color: #FFE066;
+  text-decoration: none;
+  margin: 0 6px;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #fff;
+}
